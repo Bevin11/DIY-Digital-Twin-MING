@@ -75,24 +75,17 @@ Grafana is an open-source data visualization and monitoring platform. It connect
 Python Simulator — Full Code
 The simulator is written in Python 3 and developed using VS Code. It uses the paho-mqtt library to publish temperature data to the MQTT broker every 2 seconds.
 
-# ─────────────────────────────────────────────
-# Simple Temperature Sensor Simulator
-# Author  : Bevin I
-# Stack   : Python → MQTT → Node-RED → InfluxDB → Grafana
-# Topic   : factory/sensor1/temperature
-# ─────────────────────────────────────────────
 
 import paho.mqtt.client as mqtt
 import json
 import time
 import random
 
-# ── SETTINGS ──────────────────────────────────
 BROKER = "localhost"
 PORT   = 1883
 TOPIC  = "factory/sensor1/temperature"
 
-# ── TEMPERATURE SIMULATION ────────────────────
+
 temperature = 25.0   # starting temperature in °C
 
 def get_temperature():
@@ -103,7 +96,7 @@ def get_temperature():
     temperature = max(20.0, min(85.0, temperature))
     return round(temperature, 2)
 
-# ── MQTT CALLBACKS ────────────────────────────
+
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Connected to MQTT Broker")
@@ -112,7 +105,7 @@ def on_connect(client, userdata, flags, rc):
     else:
         print(f"Connection failed. Code: {rc}")
 
-# ── MAIN ──────────────────────────────────────
+
 client = mqtt.Client(client_id="temp_sensor_1")
 client.on_connect = on_connect
 client.connect(BROKER, PORT)
