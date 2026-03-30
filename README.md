@@ -113,14 +113,24 @@ InfluxDB — Time-Series Data Storage
 
 Project Structure:
 
+This repository is organized into three main folders.
+
+1.The `python-simulator` folder contains the Python script 
+that simulates the industrial temperature sensor and 
+publishes data to the MQTT broker. 
+2.The `node-red-flows` folder will contain the exported Node-RED flow JSON file 
+showing the complete data pipeline configuration. 
+3.The `docs` folder holds all project screenshots and 
+documentation used in this README. The root contains 
+this README file describing the entire project.
+```
 DIY-Digital-Twin-MING/
 ├── python-simulator/
-│   └── temperature_sensor.py    # Sensor simulator
-├── node-red-flows/              # Node-RED flows (coming soon)
+│   └── temperature_sensor.py    # Simulates temperature sensor
+├── node-red-flows/              # Node-RED pipeline (coming soon)
 ├── docs/                        # Screenshots and documentation
-└── README.md
-
-
+└── README.md                    # Project documentation
+```
 
 How to Run:
 
