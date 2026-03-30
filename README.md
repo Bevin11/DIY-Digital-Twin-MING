@@ -166,14 +166,14 @@ py temperature_sensor.py
 
 MQTT Message Format (JSON)
 
-json
+```json
 {
   "sensor_id": "sensor1",
   "temperature": 45.23,
   "unit": "celsius",
   "location": "factory_floor"
 }
-
+```
 
 MQTT Topic : factory/sensor1/temperature
 QoS Level : 1 (At least once delivery)
