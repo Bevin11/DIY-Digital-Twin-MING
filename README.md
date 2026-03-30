@@ -73,6 +73,7 @@ Grafana is an open-source data visualization and monitoring platform. It connect
 
 
 Python Simulator — Full Code
+
 The simulator is written in Python 3 and developed using VS Code. It uses the paho-mqtt library to publish temperature data to the MQTT broker every 2 seconds.
 
 ```
@@ -161,16 +162,9 @@ InfluxDB — Time-Series Data Storage
 
 Project Structure:
 
-This repository is organized into three main folders.
 
-1.The `python-simulator` folder contains the Python script 
-that simulates the industrial temperature sensor and 
-publishes data to the MQTT broker. 
-2.The `node-red-flows` folder will contain the exported Node-RED flow JSON file 
-showing the complete data pipeline configuration. 
-3.The `docs` folder holds all project screenshots and 
-documentation used in this README. The root contains 
-this README file describing the entire project.
+This repository is organized into three main folders.
+The python-simulator folder contains the Python script that simulates the industrial temperature sensor and publishes data to the MQTT broker — written and developed in VS Code. The node-red-flows folder will contain the exported Node-RED flow JSON file showing the complete data pipeline configuration. The docs folder holds all project screenshots and documentation used in this README. The root contains this README file describing the entire project
 ```
 DIY-Digital-Twin-MING/
 ├── python-simulator/
