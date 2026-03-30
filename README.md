@@ -23,7 +23,7 @@ Live Dashboard:
 
 System Architecture:
 
-Python Simulator (temperature_sensor.py)
+Python Simulator (temperature_sensor.py) — written in VS Code
               ↓  MQTT QoS 1 — retain=True
     Mosquitto Broker (localhost:1883)
               ↓  Subscribe
