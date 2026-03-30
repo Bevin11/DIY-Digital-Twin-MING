@@ -193,11 +193,14 @@ InfluxDB Data Model:
 
 
 Grafana Flux Query:
-flux
+```flux
 from(bucket: "ming_factory")
   |> range(start: -15m)
   |> filter(fn: (r) => r._measurement == "temperature_data")
   |> filter(fn: (r) => r._field == "temperature")
+```
+
+---
   
 
 About the Author:
