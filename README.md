@@ -75,7 +75,7 @@ Grafana is an open-source data visualization and monitoring platform. It connect
 Python Simulator — Full Code
 The simulator is written in Python 3 and developed using VS Code. It uses the paho-mqtt library to publish temperature data to the MQTT broker every 2 seconds.
 
-
+```
 import paho.mqtt.client as mqtt
 import json
 import time
@@ -130,7 +130,7 @@ except KeyboardInterrupt:
     print("\nSensor stopped.")
     client.loop_stop()
     client.disconnect()
-
+```
 
 What This Project Does:
 
