@@ -177,11 +177,9 @@ DIY-Digital-Twin-MING/
 How to Run:
 
 Requirements
-- Python 3.x with paho-mqtt and influxdb-client
-- Mosquitto MQTT Broker
-- InfluxDB v2.x
-- Node-RED with node-red-contrib-influxdb
-- Grafana
+How to Run
+Requirements
+SoftwareVersionPurposePython 3.x3.10+Run the simulatorVS CodeLatestCode editorMosquittov2.xMQTT BrokerInfluxDBv2.8Time-series databaseNode-REDv3.xFlow orchestrationGrafanav10.xDashboar
 
 Setup Steps
 
