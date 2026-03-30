@@ -245,6 +245,15 @@ from(bucket: "ming_factory")
 ```
 
 ---
+
+Upcoming Features
+
+ CODESYS SoftPLC integration (replace Python simulator)
+ Multi-machine simulation (Motor, Reactor, Conveyor Belt)
+ OPC-UA protocol layer
+ Predictive maintenance alerts
+ Node-RED flow JSON export
+ Docker containerization
   
 
 About the Author:
