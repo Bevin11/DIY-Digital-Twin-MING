@@ -174,8 +174,7 @@ MQTT Message Format (JSON)
   "location": "factory_floor"
 }
 ```
-}
-```
+
 
 **MQTT Topic:** `factory/sensor1/temperature`
 **QoS Level:** 1 (At least once delivery)
