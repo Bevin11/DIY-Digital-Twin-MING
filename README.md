@@ -45,6 +45,32 @@ Tech Stack (MING):
 
 ---
 
+Tools Used :
+
+Visual Studio Code (VS Code)
+
+VS Code is the code editor used to write the Python simulator in this project. It is the most widely used code editor in the world, developed by Microsoft and available for free. It provides syntax highlighting, error detection, a built-in terminal to run Python programs, and thousands of extensions. Every line of Python code in this project was written inside VS Code.
+
+Python
+
+Python is the programming language used to simulate the industrial temperature sensor. It is one of the most popular languages in the world for data engineering, IoT, and automation projects. In this project, Python generates realistic temperature values, packages them as JSON messages, and publishes them to the MQTT broker every 2 seconds — exactly mimicking how a real PLC or IoT sensor would behave. Two libraries are used — paho-mqtt for MQTT communication and influxdb-client for direct database writing.
+
+MQTT — Mosquitto Broker
+
+MQTT (Message Queuing Telemetry Transport) is the global standard protocol for IoT communication. It uses a publish-subscribe architecture — the Python sensor publishes temperature data to a topic, and Node-RED subscribes to receive it. Mosquitto is the open-source MQTT broker that sits in the middle and routes all messages. It runs as a background service on Windows and is the same broker used in real industrial IoT deployments worldwide.
+
+Node-RED
+
+Node-RED is a visual flow programming tool developed by IBM, now maintained by the OpenJS Foundation. Instead of writing code, you drag and drop nodes onto a canvas and connect them with wires. In this project, Node-RED subscribes to the MQTT broker, receives temperature data, transforms it using a JavaScript function node, and writes it to InfluxDB. It is widely used in Industry 4.0 for connecting industrial systems without complex programming.
+
+nfluxDB
+
+InfluxDB is a time-series database — specifically designed for storing data that is continuously collected over time with precise timestamps. Unlike MySQL or SQL Server, InfluxDB is optimized for sensor data, metrics, and real-time measurements. In this project, every temperature reading is stored in InfluxDB with nanosecond-precision timestamps, making it possible to query historical trends and display them in Grafana.
+
+Grafana
+
+Grafana is an open-source data visualization and monitoring platform. It connects to InfluxDB, queries the stored temperature data using the Flux query language, and renders a live, auto-refreshing graph on a professional dashboard. The dashboard includes a threshold line at 80°C — when temperature crosses this line, it turns red, simulating an industrial alarm condition. Grafana is used by companies like PayPal, eBay, and thousands of manufacturers for real-time monitoring.
+
 
 What This Project Does:
 
