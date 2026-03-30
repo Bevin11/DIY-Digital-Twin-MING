@@ -78,10 +78,14 @@ Python Simulator (temperature_sensor.py)
 
 Tech Stack (MING):
 
-M - MQTT | Mosquitto v2.x -  Real-time message transport
-I - InfluxDB | v2.8.0 - Time-series data storage
-N - Node-RED  | v3.x -  Data flow orchestration
-G - Grafana  | v10.x - Live monitoring dashboard
+| Letter | Tool | Version | Purpose |
+|--------|------|---------|---------|
+| **M** | MQTT — Mosquitto | v2.x | Real-time message transport |
+| **I** | InfluxDB | v2.8.0 | Time-series data storage |
+| **N** | Node-RED | v3.x | Data flow orchestration |
+| **G** | Grafana | v10.x | Live monitoring dashboard |
+
+---
 
 
 What This Project Does:
