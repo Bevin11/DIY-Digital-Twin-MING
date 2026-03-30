@@ -176,10 +176,14 @@ DIY-Digital-Twin-MING/
 
 How to Run:
 
-Requirements
-How to Run
-Requirements
-SoftwareVersionPurposePython 3.x3.10+Run the simulatorVS CodeLatestCode editorMosquittov2.xMQTT BrokerInfluxDBv2.8Time-series databaseNode-REDv3.xFlow orchestrationGrafanav10.xDashboar
+Requirements 
+
+* Python 3.x3.10+ Run the simulator
+* VS Code Latest Code editor
+* Mosquittov2.x MQTT Broker
+* InfluxDB v2.8 Time-series database
+* Node-RED v3.x Flow orchestration
+* Grafanav 10.x Dashboar
 
 Setup Steps
 
