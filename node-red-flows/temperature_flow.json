@@ -1,0 +1,145 @@
+[
+    {
+        "id": "34cb83f74bca4dcf",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "mqtt_in_temp",
+        "type": "mqtt in",
+        "z": "34cb83f74bca4dcf",
+        "name": "Temperature Sensor",
+        "topic": "factory/sensor1/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "local_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "json_parse"
+            ]
+        ]
+    },
+    {
+        "id": "json_parse",
+        "type": "json",
+        "z": "34cb83f74bca4dcf",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "f77e11a3d6f6460c"
+            ]
+        ]
+    },
+    {
+        "id": "debug_out",
+        "type": "debug",
+        "z": "34cb83f74bca4dcf",
+        "name": "Show Data",
+        "active": true,
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "96272df996f154a3",
+        "type": "influxdb out",
+        "z": "34cb83f74bca4dcf",
+        "influxdb": "14ddd472e406f12d",
+        "name": "",
+        "measurement": "temperature_data",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "DIY digital twins",
+        "bucket": "ming_factory",
+        "x": 760,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f77e11a3d6f6460c",
+        "type": "function",
+        "z": "34cb83f74bca4dcf",
+        "name": "function 1",
+        "func": "var temp = msg.payload.temperature;\nmsg.payload = {\n    temperature: parseFloat(temp)\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 380,
+        "wires": [
+            [
+                "96272df996f154a3",
+                "debug_out"
+            ]
+        ]
+    },
+    {
+        "id": "local_broker",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 15,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "14ddd472e406f12d",
+        "type": "influxdb",
+        "hostname": "http://localhost:8086",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "Save to InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": false
+    },
+    {
+        "id": "fff0392ac41e5040",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-influxdb": "0.7.0"
+        }
+    }
+]
